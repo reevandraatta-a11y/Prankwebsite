@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Misterius</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="container">
+        <h1>PORTAL MISTERIUS</h1>
+        <p>
+            Sebuah sinyal gelap terdeteksi...
+            <br>
+            Tekan tombol untuk memulai koneksi.
+        </p>
+
+        <button id="hubungkanBtn">Hubungkan</button>
+    </div>
+
+    <!-- Audio -->
+    <audio id="mysticSound">
+        <source src="misteri.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const tombol = document.getElementById("hubungkanBtn");
+        const suara = document.getElementById("mysticSound");
+
+        tombol.addEventListener("click", () => {
+            suara.play();
+
+            tombol.innerText = "Terhubung...";
+            tombol.style.boxShadow = "0 0 30px #00ffee";
+
+            document.body.classList.add("active");
+        });
+    </script>
+
+</body>
+</html>
